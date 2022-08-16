@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  template:`
-  <h1>Test nav</h1>
-  <nav>
-    <ul>
-      <li><a routerLink="/home">Home</a></li>
-    </ul>
-  </nav>
-  <router-outlet></router-outlet>
-  `
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'testapp';
+  constructor(private router: Router) {
+  }
+
+  goToIndex() {
+    this.router.navigate(['/', 'index']);
+  }
+  goToAboutUs() {
+    this.router.navigate(['/', 'aboutUs']);
+  }
+  goToProducts() {
+    this.router.navigate(['/', 'products']);
+  }
 }
