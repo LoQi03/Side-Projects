@@ -3,12 +3,13 @@ import { MenuItems } from "./MenuItems";
 import './Navbar.css';
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal.component";
+import SignIn from "../../Pages/signin";
 
 function Navbar() {
     const [buttonSignUp, setButtonSignUp] = useState(false);
 
     return (
-        <nav className="navbar navbar-dark bg-primary navbar-expand-lg bg-primary sticky-top">
+        <nav className="navbar navbar-dark bg-primary navbar-expand-lg bg-primary">
             <div className="container-fluid">
                 <Link className="navbar-brand" to={MenuItems[0].url}>TestApp</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +32,7 @@ function Navbar() {
                 </div>
             </div>
             <Modal trigger={buttonSignUp} title="Sign In" button="Login" setTrigger={setButtonSignUp}>
-                dsaklfjkléasdjfklasdjf
-                asdjklfajsdlkfjasdklfjasdlk
-                sdaklfjasdlkfjléasdjfkléasdjfléksa
-                skaldfjlaskdjfkléasdjfkléa
+               <SignIn/>
             </Modal>
         </nav>
     )
