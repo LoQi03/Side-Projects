@@ -89,6 +89,10 @@
         justify-content: space-between;
         flex-flow: column;
     }
+    .modal{
+        overflow-y: hidden; /* Hide vertical scrollbar */
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
 
     .modal-header {
         display: none;
@@ -127,7 +131,7 @@
     .mobile-button {
         display: block;
         width: auto;
-        margin-top: 20px;
+        margin-top: 15px;
         width: 200px;
     }
 

@@ -26,8 +26,8 @@ function Navbar() {
                         })}
                     </ul>
                     <div className="navButtons">
-                        <button type="button" className="btn btn-secondary buttonMargin bg-secondary" onClick={()=>setButtonSignUp(true)}>Sign Up</button>
-                        <button type="button" className="btn btn btn-light buttonMargin">Sign In</button>
+                        <button type="button" className="btn btn-secondary buttonMargin bg-secondary">Sign Up</button>
+                        <button type="button" className="btn btn btn-light buttonMargin"  onClick={()=>setButtonSignUp(true)}>Sign In</button>
                     </div>
                 </div>
             </div>
