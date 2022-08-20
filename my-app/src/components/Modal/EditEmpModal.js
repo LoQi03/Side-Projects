@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button, Row, Col, Form } from 'react-bootstrap'
 
-export class EditDepModal extends Component {
+export class EditEmpModal extends Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -73,4 +73,4 @@ export class EditDepModal extends Component {
         );
     }
 }
-export default EditDepModal
+export default EditEmpModal

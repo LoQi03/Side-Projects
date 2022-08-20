@@ -26,7 +26,8 @@ export class AddDepModal extends Component {
                     (error) => {
                         alert('Failed');
                     }
-    )}
+    );
+}
 
     render() {
         return (

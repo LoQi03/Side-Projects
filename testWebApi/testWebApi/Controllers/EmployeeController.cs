@@ -44,7 +44,7 @@ namespace testWebApi.Controllers
         [HttpPost]
         public JsonResult Post(Employee emp)
         {
-            string query = $"insert into dbo.Employee (EmployeeName,Department,DateOfJoining,PhotoFileName) values ( {emp.EmployeeName}, {emp.Department}, {emp.DateOfJoining}, {emp.PhotoFileName} )";
+            string query = $"insert into dbo.Employee (EmployeeName,Department,DateOfJoining,PhotoFileName) values ( '{emp.EmployeeName}', '{emp.Department}', '{emp.DateOfJoining}', '{emp.PhotoFileName}' )";
                     
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
