@@ -62,7 +62,7 @@ export class AddDepModal extends Component {
             .then((result) => {
                 this.imagesrc = process.env.REACT_APP_PHOTO_PATH + result;
                 this.photofilename = result;
-                this.igameapi = process.env.REACT_APP_API + 'Employee/'+result;
+                this.igameapi = process.env.REACT_APP_API + 'Employee/'+this.photofilename;
             }, (error) => {
                 alert("Failed");
             })

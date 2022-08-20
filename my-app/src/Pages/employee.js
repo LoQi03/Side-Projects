@@ -66,7 +66,7 @@ class Employee extends Component {
                                 <td>
                                     <ButtonToolbar>
                                         <Button className="mr-2" variant="info" onClick={() => this.setState({ editModalShow: true, empid: emp.EmployeeId, empname: emp.EmployeeName, depmt:emp.Department,
-                                        photofilename: emp.PhotosFileName, doj:emp.DateOfJoining })}>
+                                        photofilename: emp.PhotoFileName, doj:emp.DateOfJoining })}>
                                             Edit
                                         </Button>
                                         <Button className="mr-2" variant="danger" onClick={() => this.deleteEmp(emp.EmployeeId)}>

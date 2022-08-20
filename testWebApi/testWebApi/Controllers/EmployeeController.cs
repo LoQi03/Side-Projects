@@ -134,7 +134,7 @@ namespace testWebApi.Controllers
             }
             catch (Exception)
             {
-                return new JsonResult("anonymous.png");
+                return new JsonResult("default.png");
             }
         }
 
