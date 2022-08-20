@@ -19,8 +19,7 @@ namespace testWebApi.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            string query = @"
-                    select DepartmentId, DepartmentName from dbo.Department";
+            string query = $"select DepartmentId, DepartmentName from dbo.Department";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
             SqlDataReader myReader;
@@ -42,10 +41,7 @@ namespace testWebApi.Controllers
         [HttpPost]
         public JsonResult Post(Department dep)
         {
-            string query = @"
-                    insert into dbo.Department values
-                    ('" + dep.DepartmentName + @"')
-                    ";
+            string query = $"insert into dbo.Department values ('{dep.DepartmentName}')";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
             SqlDataReader myReader;
@@ -68,11 +64,7 @@ namespace testWebApi.Controllers
         [HttpPut]
         public JsonResult Put(Department dep)
         {
-            string query = @"
-                    update dbo.Department set 
-                    DepartmentName = '" + dep.DepartmentName + @"'
-                    where DepartmentId = '" + dep.DepartmentId + @"'
-                    ";
+            string query = $"update dbo.Department set DepartmentName = '{dep.DepartmentName}' where DepartmentId = '{ dep.DepartmentId }'";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
             SqlDataReader myReader;
@@ -95,10 +87,7 @@ namespace testWebApi.Controllers
         [HttpDelete("{id}")]
         public JsonResult Delete(int id)
         {
-            string query = @"
-                    delete from dbo.Department 
-                    where DepartmentId = '" + id + @"'
-                    ";
+            string query = $"delete from dbo.Department where DepartmentId =  {id} ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
             SqlDataReader myReader;
