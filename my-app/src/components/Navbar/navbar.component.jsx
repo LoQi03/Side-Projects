@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { MenuItems } from "./MenuItems";
 import './Navbar.css';
 import { Link } from "react-router-dom";
-import Modal from "../Modal/Modal.component";
-import SignIn from "../../Pages/signin";
+
 
 function Navbar() {
     const [buttonSignUp, setButtonSignUp] = useState(false);
@@ -31,9 +30,6 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-            <Modal trigger={buttonSignUp} title="Sign In" button="Login" setTrigger={setButtonSignUp}>
-               <SignIn/>
-            </Modal>
         </nav>
     )
 }

@@ -27,6 +27,20 @@ class Department extends Component
         this.refreshList();
     }
 
+    deleteDep(depid){
+        if(window.confirm('Are you sure?'))
+        {
+            fetch(process.env.REACT_APP_API+'Department/'+depid,
+            {
+                method:'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+        }
+    }
+
     render(){
         const {deps,depid,depname}=this.state;
         let addModalClose=()=>this.setState({addModalShow:false});
@@ -50,6 +64,9 @@ class Department extends Component
                                     <ButtonToolbar>
                                         <Button className="mr-2" variant="info" onClick={()=>this.setState({editModalShow:true,depid:dep.DepartmentId,depname:dep.DepartmentName})}>
                                             Edit
+                                        </Button>
+                                        <Button className="mr-2" variant="danger" onClick={()=>this.deleteDep(dep.DepartmentId)}>
+                                            Delete
                                         </Button>
                                         <EditDepModal show={this.state.editModalShow}
                                         onHide={editModalClose}
