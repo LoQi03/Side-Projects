@@ -138,6 +138,14 @@ namespace testWebApi.Controllers
             }
         }
 
+        [HttpGet("{file}")]
+        public IActionResult Get(string file)
+        {
+            Byte[] b = System.IO.File.ReadAllBytes(_environment.ContentRootPath + "/Photos/"+file);  
+            return File(b, "image/jpeg");
+        }
+
+
         [Route("GetAllDepartmentNames")]
         [HttpGet]
         public JsonResult GetAllDepartmentNames()

@@ -10,6 +10,7 @@ export class AddDepModal extends Component {
     }
     photofilename = "default.png";
     imagesrc = process.env.REACT_APP_PHOTO_PATH + this.photofilename;
+    igameapi = process.env.REACT_APP_API + 'Employee/'+this.photofilename;
 
     componentDidMount() {
         fetch(process.env.REACT_APP_API + 'Department')
@@ -61,6 +62,7 @@ export class AddDepModal extends Component {
             .then((result) => {
                 this.imagesrc = process.env.REACT_APP_PHOTO_PATH + result;
                 this.photofilename = result;
+                this.igameapi = process.env.REACT_APP_API + 'Employee/'+result;
             }, (error) => {
                 alert("Failed");
             })
@@ -114,7 +116,7 @@ export class AddDepModal extends Component {
                                 </Form>
                             </Col>
                             <Col sm={6}>
-                                <Image width="200px" height="200px" src={this.imagesrc} />
+                                <Image width="200px" height="200px" src={this.igameapi} />
                                 <input onChange={this.handleFileSelected} type="File"/>
                             </Col>
                         </Row>
