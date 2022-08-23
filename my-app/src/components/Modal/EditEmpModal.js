@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Button, Row, Col, Form,Image } from 'react-bootstrap'
+import { Modal, Button, Row, Col, Form, Image } from 'react-bootstrap'
 
 export class EditEmpModal extends Component {
     constructor(props) {
@@ -7,10 +7,11 @@ export class EditEmpModal extends Component {
         this.state = { deps: [] };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFileSelected = this.handleFileSelected.bind(this);
+        console.log(this.props.EmployeeName)
     }
-    photofilename = "default.png";
+    photofilename = this.props.PhotoFileName;
     imagesrc = process.env.REACT_APP_PHOTO_PATH + this.photofilename;
-    igameapi = process.env.REACT_APP_API + 'Employee/'+this.photofilename;
+    igameapi = process.env.REACT_APP_API + 'Employee/' + this.props.photofilename;
 
     componentDidMount() {
         fetch(process.env.REACT_APP_API + 'Department')
@@ -28,7 +29,7 @@ export class EditEmpModal extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 EmployeeId: event.target.EmployeeId.value,
                 EmployeeName: event.target.EmployeeName.value,
                 Department: event.target.Department.value,
@@ -36,15 +37,15 @@ export class EditEmpModal extends Component {
                 PhotoFileName: this.photofilename
             })
         })
-                .then(res => res.json())
-                .then((result) => {
-                    alert(result);
-                },
-                    (error) => {
-                        alert('Failed');
-                    }
-    );
-}
+            .then(res => res.json())
+            .then((result) => {
+                alert(result);
+            },
+                (error) => {
+                    alert('Failed');
+                }
+            );
+    }
     handleFileSelected(event) {
         event.preventDefault();
         this.photofilename = event.target.files[0].name;
@@ -62,11 +63,13 @@ export class EditEmpModal extends Component {
             .then(res => res.json())
             .then((result) => {
                 this.imagesrc = process.env.REACT_APP_PHOTO_PATH + result;
-
-                this.imageapi = process.env.REACT_APP_API + 'Employee/'+result;
+                this.photofilename = result;
+                this.igameapi = process.env.REACT_APP_API + 'Employee/' + this.photofilename;
+                this.forceUpdate();
             }, (error) => {
                 alert("Failed");
             })
+
     }
 
     render() {
@@ -86,7 +89,7 @@ export class EditEmpModal extends Component {
                     <Modal.Body>
                         <Row>
                             <Col sm={6}>
-                                
+
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlId="EmployeeId">
                                         <Form.Label>Employee Id:</Form.Label>
@@ -124,8 +127,8 @@ export class EditEmpModal extends Component {
                                 </Form>
                             </Col>
                             <Col sm={6}>
-                                <Image width="200px" height="200px" src={this.imageapi} defaultValue={process.env.REACT_APP_API + 'Employee/'+this.props.photofilename}/>
-                                <input onChange={this.handleFileSelected} type="File"/>
+                                <Image width="200px" height="200px" src={this.igameapi}/>
+                                <input onChange={this.handleFileSelected} type="File" />
                             </Col>
                         </Row>
                     </Modal.Body>

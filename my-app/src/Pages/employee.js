@@ -22,10 +22,6 @@ class Employee extends Component {
         this.refreshList();
     }
 
-    componentDidUpdate() {
-        this.refreshList();
-    }
-
     deleteEmp(empid) {
         if (window.confirm('Are you sure?')) {
             fetch(process.env.REACT_APP_API + 'Employee/' + empid,
@@ -36,14 +32,21 @@ class Employee extends Component {
                         'Content-Type': 'application/json'
                     }
                 })
+                .then(res=>res.json())
+                .then((result)=>{
+                    alert(result);
+                    this.refreshList();
+                },(error=>{
+                    alert('Failed');
+                }))
+               
         }
-        this.refreshList();
     }
 
     render() {
         const { emps, empid, empname,depmt,photofilename,doj } = this.state;
-        let addModalClose = () => this.setState({ addModalShow: false });
-        let editModalClose = () => this.setState({ editModalShow: false });
+        let addModalClose = () => this.setState({ addModalShow: false },this.refreshList());
+        let editModalClose = () => this.setState({ editModalShow: false },this.refreshList());
         return (
             <div className="container">
                 <Table className="mt4" striped bordered hover size="sm">
@@ -66,7 +69,7 @@ class Employee extends Component {
                                 <td>
                                     <ButtonToolbar>
                                         <Button className="mr-2" variant="info" onClick={() => this.setState({ editModalShow: true, empid: emp.EmployeeId, empname: emp.EmployeeName, depmt:emp.Department,
-                                        photofilename: emp.PhotoFileName, doj:emp.DateOfJoining })}>
+                                        photofilename:emp.PhotoFileName, doj:emp.DateOfJoining },this.refreshList())}>
                                             Edit
                                         </Button>
                                         <Button className="mr-2" variant="danger" onClick={() => this.deleteEmp(emp.EmployeeId)}>
@@ -88,7 +91,7 @@ class Employee extends Component {
                 </Table>
                 <ButtonToolbar>
                     <Button variant='primary'
-                        onClick={() => this.setState({ addModalShow: true })}>
+                        onClick={() => this.setState({ addModalShow: true },this.refreshList())}>
                         Add
                     </Button>
                     <AddEmpModal show={this.state.addModalShow}

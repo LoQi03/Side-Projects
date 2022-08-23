@@ -18,10 +18,12 @@ export class AddDepModal extends Component {
             .then(data => {
                 this.setState({ deps: data });
             });
+
     }
 
     handleSubmit(event) {
         event.preventDefault();
+
         fetch(process.env.REACT_APP_API + 'Employee', {
             method: 'POST',
             headers: {
@@ -61,11 +63,12 @@ export class AddDepModal extends Component {
             .then(res => res.json())
             .then((result) => {
                 this.imagesrc = process.env.REACT_APP_PHOTO_PATH + result;
-                this.photofilename = result;
-                this.igameapi = process.env.REACT_APP_API + 'Employee/'+this.photofilename;
+                this.igameapi = process.env.REACT_APP_API + 'Employee/'+result;
+                this.photofilename="default.png";
             }, (error) => {
                 alert("Failed");
             })
+
     }
 
     render() {
@@ -116,7 +119,7 @@ export class AddDepModal extends Component {
                                 </Form>
                             </Col>
                             <Col sm={6}>
-                                <Image width="200px" height="200px" src={this.igameapi} />
+                                <Image width="200px" height="200px" src={this.igameapi} name="Picture"/>
                                 <input onChange={this.handleFileSelected} type="File"/>
                             </Col>
                         </Row>

@@ -141,8 +141,16 @@ namespace testWebApi.Controllers
         [HttpGet("{file}")]
         public IActionResult Get(string file)
         {
-            Byte[] b = System.IO.File.ReadAllBytes(_environment.ContentRootPath + "/Photos/"+file);  
-            return File(b, "image/jpeg");
+            try
+            {
+                Byte[] b = System.IO.File.ReadAllBytes(_environment.ContentRootPath + "/Photos/" + file);
+                return File(b, "image/jpeg");
+            }
+            catch(Exception)
+            {
+                Byte[] b = System.IO.File.ReadAllBytes(_environment.ContentRootPath + "/Photos/" + "default.png");
+                return File(b, "image/jpeg");
+            }
         }
 
 
