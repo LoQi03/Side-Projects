@@ -1,10 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import ContentFader from "./contentfader.component";
 
 const Popover=(props)=>{
     const popoverId = props.popoverId;
-    const [isVisible, setisVisible] = useState(props.isVisible);
-    const popoverclass = isVisible ? "absolute bg-white  rounded-lg fade-in z-[101] shadow-md overflow-auto" : "hidden";
+    const isVisible = props.isVisible;
     const elementId = props.elementId;
     const preferredPosition = props.preferredPosition;
     const useAnchorElementWidth = props.useAnchorElementWidth;
@@ -31,10 +30,10 @@ const Popover=(props)=>{
 
     return(
         <div className={isVisible ? "" : "hidden"}>
-        <div id={popoverId} className={popoverclass} style={{zIndex:props.zindex}}>
+        <div id={popoverId} className="absolute bg-white  rounded-lg fade-in z-[101] shadow-md overflow-auto" style={{zIndex:props.zindex}}>
             {props.children}
         </div>
-        <ContentFader isVisible={props.isVisible} zindex={(props.zindex)} onClickEvent={()=>{setisVisible(false)}}/>
+        <ContentFader isVisible={props.isVisible} zindex={(props.zindex)} onClickEvent={props.ContentFaderClickEvent}/>
         </div>
     );
 }
