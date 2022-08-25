@@ -19,7 +19,7 @@ const Modal = (props) => {
                     </button>
                 </div>
                 <div className="p-4 flex-auto border-t-2 mx-2 border-gray-300">{props.children}</div>
-                <div className="text p-4 sm:text-center lg:text-right md:text-right lg:text-lg md:text-lg sm:text-2xl"><button className="lg:py-2 md:py-2 sm:py-5 lg:px-4 md:px-4 sm:px-10 bg-green-500 text-white rounded-lg hover:bg-green-600 flex-none text-bold" onClick={props.event}>{props.buttontext}</button></div>
+                <div className="text p-4 sm:text-center lg:text-right md:text-right lg:text-lg md:text-lg sm:text-2xl"><button className="lg:py-2 md:py-2 sm:py-5 lg:px-4 md:px-4 sm:px-10 bg-green-500 text-white rounded-lg hover:bg-green-600 flex-none text-bold" onClick={props.onClickevent}>{props.buttonText}</button></div>
             </div>
         </div>
     );
