@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import ContentFader from "./contentfader.component";
 
 const Popover=(props)=>{
     const popoverId = props.popoverId;
@@ -33,7 +32,6 @@ const Popover=(props)=>{
         <div id={popoverId} className="absolute bg-white  rounded-lg fade-in z-[101] shadow-md overflow-auto" style={{zIndex:props.zindex}}>
             {props.children}
         </div>
-        <ContentFader isVisible={props.isVisible} zindex={(props.zindex)} onClickEvent={props.ContentFaderClickEvent}/>
         </div>
     );
 }

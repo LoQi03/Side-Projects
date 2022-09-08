@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IZHZiCDIjy/F3FnjXJZThyaqPvrG9X0/4qGrtkAR2fIIPRgdIm3vKOUfFlrNIofqk+qtgkMgZsbpiXuRQadQ1Q==",
+  "dgSpecHash": "LjTntKYD8zzDK0F/CX9S3tn5lYsLgwP17d01VrZKTHzcP1QsLDuXPdHDSFuY2BkbZwzNxquzzzujxWjrAAG6ng==",
   "success": true,
-  "projectFilePath": "E:\\Side-Projects\\testWebApi\\testWebApi\\testWebApi.csproj",
+  "projectFilePath": "C:\\Users\\Mate\\Desktop\\Side-Projects\\testWebApi\\testWebApi\\testWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mate\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.8\\microsoft.aspnetcore.jsonpatch.6.0.8.nupkg.sha512",
     "C:\\Users\\Mate\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.8\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.8.nupkg.sha512",
@@ -23,7 +23,11 @@
     "C:\\Users\\Mate\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\Mate\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\Mate\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Mate\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\Mate\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Mate\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.7\\microsoft.netcore.app.host.win-x64.6.0.7.nupkg.sha512",
+    "C:\\Users\\Mate\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.7\\microsoft.aspnetcore.app.ref.6.0.7.nupkg.sha512",
+    "C:\\Users\\Mate\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.7\\microsoft.windowsdesktop.app.ref.6.0.7.nupkg.sha512",
+    "C:\\Users\\Mate\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.7\\microsoft.netcore.app.ref.6.0.7.nupkg.sha512"
   ],
   "logs": []
 }
