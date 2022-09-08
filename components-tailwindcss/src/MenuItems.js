@@ -14,12 +14,14 @@ export const MenuItems = [
     {
         title: 'Department',
         url: '/department',
-        cName: ''
+        cName: '',
+        value: 'Department'
     },
     {
         title: 'Contact Us',
         url: '/contacts',
-        cName: ''
+        cName: '',
+        value: 'Contact Us'
     }
 
 ]

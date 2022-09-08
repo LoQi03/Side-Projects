@@ -1,13 +1,12 @@
 import React  from "react";
 import './App.css';
-import DropDown from "./components/dropdown.component";
-import { MenuItems } from "./MenuItems";
+import UploadFileContainer from './components/uploadFilecontainer.component'
 
 
 function App() {
   return (
     <div className='h-screen w-screen bg-blue-500 flex justify-center items-center'>
-      <DropDown id="test" List={MenuItems} placeHolder="Valami"></DropDown>
+      <UploadFileContainer className="h-10 h-32"></UploadFileContainer>
     </div>
       
   );
