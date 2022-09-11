@@ -1,14 +1,19 @@
 import React  from "react";
 import './App.css';
-import UploadFileContainer from './components/uploadFilecontainer.component'
+import DropFileInput from './components/drop-file-input/DropFileInput';
 
 
 function App() {
+  const onFileChange = (files) => {
+    console.log(files);
+}
+
   return (
-    <div className='h-screen w-screen bg-blue-500 flex justify-center items-center'>
-      <UploadFileContainer className="h-10 h-32"></UploadFileContainer>
-    </div>
-      
+    <div className="h-screen w-screen bg-sky-400 p-2">
+      <DropFileInput
+                onFileChange={(files) => onFileChange(files)}
+            />
+      </div>
   );
 }
 
