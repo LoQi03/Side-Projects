@@ -36,6 +36,7 @@ const DropFileInput = props => {
 
     return (
         <>
+        <div className='bg-white p-4 rounded-lg'>
             <div
                 ref={wrapperRef}
                 className="drop-file-input"
@@ -43,33 +44,36 @@ const DropFileInput = props => {
                 onDragLeave={onDragLeave}
                 onDrop={onDrop}
             >
-                <div className="drop-file-input__label  bg-white rounded-lg border-dashed border-2 border-slate-400 w-[25rem] h-30">
+                <div className="drop-file-input__label flex flex-col place-items-center bg-white rounded-lg border-dashed border-2 border-slate-400 w-[25rem] h-30">
                     <img src={uploadImg} alt="" />
-                    <p>Drag & Drop your files here</p>
+                    <p className="text-slate-400">Drop your files here</p>
                 </div>
                 <input type="file" value="" onChange={onFileDrop}/>
             </div>
             {
                 fileList.length > 0 ? (
-                    <div className="drop-file-preview bg-white rounded-lg border-solid border-2 border-slate-400">
-                        <p className="drop-file-preview__title p-2">
+                    <div className="">
+                        <p className="p-4 bg-slate-300 rounded-lg font-semibold mb-2 text-lg">
                             Ready to upload
                         </p>
                         {
                             fileList.map((item, index) => (
+                                <div className='bg-slate-200 rounded-lg'>
                                 <div key={index} className="drop-file-preview__item">
                                     <img src={ImageConfig[item.type.split('/')[1]] || ImageConfig['default']} alt="" />
                                     <div className="drop-file-preview__item__info">
                                         <p>{item.name}</p>
-                                        <p>{item.size}B</p>
+                                        <p>{item.size} Byte</p>
                                     </div>
-                                    <span className="drop-file-preview__item__del" onClick={() => fileRemove(item)}>x</span>
+                                    <span className="drop-file-preview__item__del bg-white rounded-full shadow-lg pb-1" onClick={() => fileRemove(item)}>x</span>
+                                </div>
                                 </div>
                             ))
                         }
                     </div>
                 ) : null
             }
+            </div>
         </>
     );
 }

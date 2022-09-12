@@ -1,6 +1,6 @@
 import React  from "react";
 import './App.css';
-import DropFileInput from './components/drop-file-input/DropFileInput';
+import DropFileInput from "./components/drop-file-input/dropfileinput.component";
 
 
 function App() {
