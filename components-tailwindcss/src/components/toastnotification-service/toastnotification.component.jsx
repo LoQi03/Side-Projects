@@ -14,7 +14,7 @@ const ToastNotification =(props)=>{
         if (isVisible) {
           interval = setInterval(() => {
             setProgress(progress => progress - 1);
-          }, 60);
+          }, 50);
           if(progress === 0)
           {
             setisVisible(false);
@@ -29,7 +29,7 @@ const ToastNotification =(props)=>{
             {isVisible ?
         <div className="flex flex-col bg-white w-[28rem] h-min-[12rem] rounded-lg">
             <div className="w-full bg-gray-200 rounded-t-lg h-2.5 dark:bg-gray-500">
-                <div className="bg-sky-500 h-2.5 rounded-t-lg" style={{width: `${progress}%`}}/>
+                <div className="bg-sky-500 h-2.5 rounded-t-lg" style={{transition: "width 50ms",width : `${progress}%`}}/>
             </div>
             <div className="h-full flex flex-col justify-between items-center">
                 <div className="m-3"><ToastNotificationImg type={props.type}></ToastNotificationImg></div>
