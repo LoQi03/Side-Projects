@@ -1,0 +1,10 @@
+.toastnotificationbar{
+    width: 30%;
+    animation-name: delay;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+@keyframes delay{
+    from {width:100%;}
+    to {width: 0%;}
+}

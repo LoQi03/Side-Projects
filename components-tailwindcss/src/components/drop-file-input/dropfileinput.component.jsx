@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './drop-file-input.css';
 
-import { ImageConfig } from '../../config/ImageConfig'; 
+import { FileImageConfig } from '../../config/ImageConfig'; 
 import uploadImg from '../../assets/cloud-upload-regular-240.png';
 
 const DropFileInput = props => {
@@ -44,7 +44,7 @@ const DropFileInput = props => {
                 onDragLeave={onDragLeave}
                 onDrop={onDrop}
             >
-                <div className="drop-file-input__label flex flex-col place-items-center bg-white rounded-lg border-dashed border-2 border-slate-400 w-[25rem] h-30">
+                <div className="drop-file-input__label flex flex-col place-items-center border-dashed border-2 bg-white rounded-lg border-slate-400">
                     <img src={uploadImg} alt="" />
                     <p className="text-slate-400">Drop your files here</p>
                 </div>
@@ -59,11 +59,11 @@ const DropFileInput = props => {
                         {
                             fileList.map((item, index) => (
                                 <div className='bg-slate-200 rounded-lg'>
-                                <div key={index} className="drop-file-preview__item">
-                                    <img src={ImageConfig[item.type.split('/')[1]] || ImageConfig['default']} alt="" />
+                                <div key={index} className="drop-file-preview__item p-2">
+                                    <img src={FileImageConfig[item.type.split('/')[1]] || FileImageConfig['default']} alt="" />
                                     <div className="drop-file-preview__item__info">
                                         <p>{item.name}</p>
-                                        <p>{item.size} Byte</p>
+                                        <p>{item.size} byte</p>
                                     </div>
                                     <span className="drop-file-preview__item__del bg-white rounded-full shadow-lg pb-1" onClick={() => fileRemove(item)}>x</span>
                                 </div>
