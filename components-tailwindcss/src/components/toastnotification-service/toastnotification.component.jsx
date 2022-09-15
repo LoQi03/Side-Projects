@@ -42,7 +42,7 @@ const ToastNotification =(props)=>{
                             )
                         })}
                 </ul>
-                <button onClick={()=>setisVisible(false)} className="bg-sky-500 px-10 m-4 text-white rounded-lg hover:bg-sky-600 text-semibold">OK</button>
+                <button onClick={()=>setisVisible(false)} className="bg-sky-500 px-16  m-4 text-white rounded-lg hover:bg-sky-600 text-lg text-semibold">OK</button>
             </div>
         </div>
          : null}
@@ -70,17 +70,17 @@ const ToastNotificationImg = (props)=>{
     if(props.type === "error")
     {
         return(
-        <img className="h-12 w-12" src={ToastNotificationImageConfig.error}  alt=""/>);
+        <img className="h-14 w-14" src={ToastNotificationImageConfig.error}  alt=""/>);
     }
     else if(props.type === "accept")
     {
         return(
-        <img className="h-12 w-12" src={ToastNotificationImageConfig.accept}  alt=""/>);
+        <img className="h-14 w-14" src={ToastNotificationImageConfig.accept}  alt=""/>);
     }
     else
     {
         return(
-        <img className="h-12 w-12" src={ToastNotificationImageConfig.default}  alt=""/>);
+        <img className="h-14 w-14" src={ToastNotificationImageConfig.default}  alt=""/>);
     }
 }
 
