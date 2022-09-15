@@ -2,25 +2,6 @@ import {React,useState,useEffect} from "react";
 import { ToastNotificationImageConfig } from "../../config/ImageConfig";
 import './toastnotification.css';
 
-const ToastNotificationImg = (props)=>{
-    if(props.type === "error")
-    {
-        return(
-        <img className="h-12 w-12" src={ToastNotificationImageConfig.error}  alt=""/>);
-    }
-    else if(props.type === "accept")
-    {
-        return(
-        <img className="h-12 w-12" src={ToastNotificationImageConfig.accept}  alt=""/>);
-    }
-    else
-    {
-        return(
-        <img className="h-12 w-12" src={ToastNotificationImageConfig.default}  alt=""/>);
-    }
-}
-
-
 const ToastNotification =(props)=>{
     const [isVisible,setisVisible]=useState(true);
     const useColor = SelectColor(props.type);
@@ -33,14 +14,14 @@ const ToastNotification =(props)=>{
         if (isVisible) {
           interval = setInterval(() => {
             setProgress(progress => progress - 1);
-          }, 50);
+          }, 60);
           if(progress === 0)
           {
             setisVisible(false);
           }
         } 
         return () => {clearInterval(interval);};}
-      }, [isVisible, progress]);
+      }, [isVisible, progress,props.AlertList.count,props.type]);
 
     return(
         
@@ -82,6 +63,24 @@ function SelectColor(type)
     else
     {
        return "text-yellow-500";
+    }
+}
+
+const ToastNotificationImg = (props)=>{
+    if(props.type === "error")
+    {
+        return(
+        <img className="h-12 w-12" src={ToastNotificationImageConfig.error}  alt=""/>);
+    }
+    else if(props.type === "accept")
+    {
+        return(
+        <img className="h-12 w-12" src={ToastNotificationImageConfig.accept}  alt=""/>);
+    }
+    else
+    {
+        return(
+        <img className="h-12 w-12" src={ToastNotificationImageConfig.default}  alt=""/>);
     }
 }
 

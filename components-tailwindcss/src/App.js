@@ -2,7 +2,6 @@ import React  from "react";
 import { AlertList } from "./AlertList";
 import './App.css';
 import DropFileInput from "./components/drop-file-input/dropfileinput.component";
-import Modal from "./components/modal.component";
 import ToastNotification from "./components/toastnotification-service/toastnotification.component";
 
 
