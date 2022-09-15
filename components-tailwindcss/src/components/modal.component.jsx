@@ -3,9 +3,9 @@ import './components.css';
 
 const Modal = (props) => {
     const [isVisible, setisVisible] = useState(props.isVisible);
-    const modalclass = isVisible ? "popup-in-anim absolute flex justify-center items-center h-screen w-screen" : "hidden";
+    const modalclass = isVisible ? "popup-in-anim centered" : "hidden";
     return (
-        <div className={modalclass} style={{ zIndex: props.zindex }}>
+        <div className={modalclass} style={{ zIndex: props.zIndex }}>
             <div className={"lg:rounded-lg md:rounded-lg sm:rounded-none shadow-md bg-white lg:h-auto md:h-auto sm:h-screen lg:w-auto md:w-auto sm:w-screen flex flex-col"}>
                 <div className="flex flex-row sm:justify-center lg:justify-between md:justify-between text-bold font-bold text-2xl p-2 rounded-t-md flex-none">{props.title}
                     <button className="text-sm font-normal pb-3 pr-2 lg:block md:block sm:hidden" onClick={() => setisVisible(false)}>X</button>

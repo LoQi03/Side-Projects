@@ -1,10 +1,14 @@
-.toastnotificationbar{
-    width: 30%;
-    animation-name: delay;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
+.fade-in-anim {
+    opacity: 0;
+    animation: fadein 0.5s forwards;
 }
-@keyframes delay{
-    from {width:100%;}
-    to {width: 0%;}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
