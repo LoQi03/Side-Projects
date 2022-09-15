@@ -4,65 +4,60 @@ import './toastnotification.css';
 
 const ToastNotification =(props)=>{
     const [isVisible,setisVisible]=useState(true);
-    const useColor = SelectColor(props.type);
+    const useColorBackGround = SelectColorBackGround(props.type);
     const [progress,setProgress] = useState(100);
 
 
     useEffect(() => {
-        if(props.type === "accept" || props.type === "warning" || props.AlertList.count >= 5){
+        if(props.type === "accept" || props.type === "warning"){
         let interval = null;
         if (isVisible) {
           interval = setInterval(() => {
-            setProgress(progress => progress - 1);
-          }, 50);
+            setProgress(progress => progress - 0.5);
+          }, 60);
           if(progress === 0)
           {
             setisVisible(false);
           }
         } 
         return () => {clearInterval(interval);};}
-      }, [isVisible, progress,props.AlertList.count,props.type]);
+        else{
+            setProgress(0);
+        }
+      }, [isVisible, progress,props.type]);
 
     return(
         
         <div className="fade-in-anim ">
             {isVisible ?
-        <div className="flex flex-col bg-white w-[28rem] h-min-[12rem] rounded-lg">
-            <div className="w-full bg-gray-200 rounded-t-lg h-2.5 dark:bg-gray-500">
-                <div className="bg-sky-500 h-2.5 rounded-t-lg" style={{transition: "width 50ms",width : `${progress}%`}}/>
+        <div className={useColorBackGround}>
+            <div className="h-full flex flex-row justify-between">
+                <div className="m-3 flex-none"><ToastNotificationImg type={props.type}></ToastNotificationImg></div>
+                <div className="ml-2 my-5 flex-auto text-white text-semibold">
+                        {props.alert}
+                </div>
+                <button onClick={()=>setisVisible(false)} className="ml-[15rem] flex-auto text-2xl m-4 text-slate-500 hover:text-white">&times;</button>
             </div>
-            <div className="h-full flex flex-col justify-between items-center">
-                <div className="m-3"><ToastNotificationImg type={props.type}></ToastNotificationImg></div>
-                <ul className="text-[13px]">
-                        {props.AlertList.map((alert, index) => {
-                            return (
-                                <li className={useColor} key={index}>
-                                {alert.text}({alert.code})
-                                </li>
-                            )
-                        })}
-                </ul>
-                <button onClick={()=>setisVisible(false)} className="bg-sky-500 px-16  m-4 text-white rounded-lg hover:bg-sky-600 text-lg text-semibold">OK</button>
-            </div>
+            <div className="bg-white opacity-50 h-2.5 rounded-b-lg" style={{transition: "width 60ms",width : `${progress}%`}}/>
         </div>
          : null}
         </div>
     );
 }
 
-function SelectColor(type)
+function SelectColorBackGround(type)
 {
     if(type === "error")
     {
-        return "text-red-500";
+        return "flex flex-col bg-red-500 max-w-[50rem] h-min-[12rem] rounded-lg";
     }
     else if(type === "accept")
     {
-        return "text-green-500";
+        return "flex flex-col bg-green-500 max-w-[50rem] h-min-[12rem] rounded-lg";
     }
     else
     {
-       return "text-yellow-500";
+       return "flex flex-col bg-amber-400 max-w-[50rem] h-min-[12rem] rounded-lg";
     }
 }
 
@@ -70,17 +65,25 @@ const ToastNotificationImg = (props)=>{
     if(props.type === "error")
     {
         return(
-        <img className="h-14 w-14" src={ToastNotificationImageConfig.error}  alt=""/>);
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 text-white">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+          </svg>);
     }
     else if(props.type === "accept")
     {
         return(
-        <img className="h-14 w-14" src={ToastNotificationImageConfig.accept}  alt=""/>);
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 text-white">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          );
     }
     else
     {
         return(
-        <img className="h-14 w-14" src={ToastNotificationImageConfig.default}  alt=""/>);
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 text-white">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+          </svg>
+          );
     }
 }
 
