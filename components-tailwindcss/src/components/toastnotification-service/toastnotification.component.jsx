@@ -1,12 +1,11 @@
 import {React,useState,useEffect} from "react";
-import { ToastNotificationImageConfig } from "../../config/ImageConfig";
 import './toastnotification.css';
 
 const ToastNotification =(props)=>{
     const [isVisible,setisVisible]=useState(true);
-    const useColorBackGround = SelectColorBackGround(props.type);
+    const useColorBackGround = selectColorBackGround(props.type);
     const [progress,setProgress] = useState(100);
-
+    const [opacity,setOpacity] = useState(1);
 
     useEffect(() => {
         if(props.type === "accept" || props.type === "warning"){
@@ -15,6 +14,10 @@ const ToastNotification =(props)=>{
           interval = setInterval(() => {
             setProgress(progress => progress - 0.5);
           }, 60);
+          if(progress <= 10)
+          {
+            setOpacity(opacity - 0.05);
+          }
           if(progress === 0)
           {
             setisVisible(false);
@@ -30,13 +33,13 @@ const ToastNotification =(props)=>{
         
         <div className="fade-in-anim ">
             {isVisible ?
-        <div className={useColorBackGround}>
+        <div className={useColorBackGround} style={{opacity :`${opacity}`} }>
             <div className="h-full flex flex-row justify-between">
                 <div className="m-3 flex-none"><ToastNotificationImg type={props.type}></ToastNotificationImg></div>
                 <div className="ml-2 my-5 flex-auto text-white text-semibold">
                         {props.alert}
                 </div>
-                <button onClick={()=>setisVisible(false)} className="ml-[15rem] flex-auto text-2xl m-4 text-slate-500 hover:text-white">&times;</button>
+                <button onClick={()=>setisVisible(false)} className="flex-1/4 text-2xl m-4 text-slate-500 hover:text-white">&times;</button>
             </div>
             <div className="bg-white opacity-50 h-2.5 rounded-b-lg" style={{transition: "width 60ms",width : `${progress}%`}}/>
         </div>
@@ -45,19 +48,19 @@ const ToastNotification =(props)=>{
     );
 }
 
-function SelectColorBackGround(type)
+function selectColorBackGround(type)
 {
     if(type === "error")
     {
-        return "flex flex-col bg-red-500 max-w-[50rem] h-min-[12rem] rounded-lg";
+        return "flex flex-col bg-red-500 min-w-[50rem] max-w-[60rem] h-min-[12rem] rounded-lg";
     }
     else if(type === "accept")
     {
-        return "flex flex-col bg-green-500 max-w-[50rem] h-min-[12rem] rounded-lg";
+        return "flex flex-col bg-green-500 min-w-[50rem] max-w-[60rem] h-min-[12rem] rounded-lg";
     }
     else
     {
-       return "flex flex-col bg-amber-400 max-w-[50rem] h-min-[12rem] rounded-lg";
+       return "flex flex-col bg-amber-400 min-w-[50rem] max-w-[60rem] h-min-[12rem] rounded-lg";
     }
 }
 
