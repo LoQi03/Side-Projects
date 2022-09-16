@@ -1,6 +1,7 @@
 import {React,useState,useEffect} from "react";
 import './toastnotification.css';
-
+import PropTypes from 'prop-types';
+import { isVisible } from "@testing-library/user-event/dist/utils";
 const ToastNotification =(props)=>{
     const [isVisible,setisVisible]=useState(true);
     const useColorBackGround = selectColorBackGround(props.type);
@@ -8,7 +9,7 @@ const ToastNotification =(props)=>{
     const [opacity,setOpacity] = useState(1);
 
     useEffect(() => {
-        if(props.type === "accept" || props.type === "warning"){
+        if(props.type === "success" || props.type === "warning"){
         let interval = null;
         if (isVisible) {
           interval = setInterval(() => {
@@ -16,11 +17,12 @@ const ToastNotification =(props)=>{
           }, 60);
           if(progress <= 10)
           {
-            setOpacity(opacity - 0.05);
+            setOpacity(opacity => opacity - 0.05);
           }
           if(progress === 0)
           {
             setisVisible(false);
+            props.setisVisible(false);
           }
         } 
         return () => {clearInterval(interval);};}
@@ -37,9 +39,9 @@ const ToastNotification =(props)=>{
             <div className="h-full flex flex-row justify-between">
                 <div className="m-3 flex-none"><ToastNotificationImg type={props.type}></ToastNotificationImg></div>
                 <div className="ml-2 my-5 flex-auto text-white text-semibold">
-                        {props.alert}
+                        {props.message}
                 </div>
-                <button onClick={()=>setisVisible(false)} className="flex-1/4 text-2xl m-4 text-slate-500 hover:text-white">&times;</button>
+                <button onClick={()=>{setisVisible(false);props.setisVisible(false)}} className="flex-1/4 text-2xl m-4 text-slate-500 hover:text-white">&times;</button>
             </div>
             <div className="bg-white opacity-50 h-2.5 rounded-b-lg" style={{transition: "width 60ms",width : `${progress}%`}}/>
         </div>
@@ -54,7 +56,7 @@ function selectColorBackGround(type)
     {
         return "flex flex-col bg-red-500 min-w-[50rem] max-w-[60rem] h-min-[12rem] rounded-lg";
     }
-    else if(type === "accept")
+    else if(type === "success")
     {
         return "flex flex-col bg-green-500 min-w-[50rem] max-w-[60rem] h-min-[12rem] rounded-lg";
     }
@@ -72,7 +74,7 @@ const ToastNotificationImg = (props)=>{
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
           </svg>);
     }
-    else if(props.type === "accept")
+    else if(props.type === "success")
     {
         return(
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 text-white">
@@ -89,5 +91,7 @@ const ToastNotificationImg = (props)=>{
           );
     }
 }
-
+ToastNotification.propTypes = {
+    setisVisible:PropTypes.func
+}
 export default ToastNotification;
