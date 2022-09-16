@@ -1,7 +1,7 @@
 import {React,useState,useEffect} from "react";
 import './toastnotification.css';
 import PropTypes from 'prop-types';
-import { isVisible } from "@testing-library/user-event/dist/utils";
+
 const ToastNotification =(props)=>{
     const [isVisible,setisVisible]=useState(true);
     const useColorBackGround = selectColorBackGround(props.type);
@@ -14,7 +14,7 @@ const ToastNotification =(props)=>{
         if (isVisible) {
           interval = setInterval(() => {
             setProgress(progress => progress - 0.5);
-          }, 60);
+          }, 30);
           if(progress <= 10)
           {
             setOpacity(opacity => opacity - 0.05);
@@ -29,11 +29,11 @@ const ToastNotification =(props)=>{
         else{
             setProgress(0);
         }
-      }, [isVisible, progress,props.type]);
+      }, [isVisible, progress,props]);
 
     return(
         
-        <div className="fade-in-anim ">
+        <div className="fade-in-anim my-2 ">
             {isVisible ?
         <div className={useColorBackGround} style={{opacity :`${opacity}`} }>
             <div className="h-full flex flex-row justify-between">
@@ -43,7 +43,7 @@ const ToastNotification =(props)=>{
                 </div>
                 <button onClick={()=>{setisVisible(false);props.setisVisible(false)}} className="flex-1/4 text-2xl m-4 text-slate-500 hover:text-white">&times;</button>
             </div>
-            <div className="bg-white opacity-50 h-2.5 rounded-b-lg" style={{transition: "width 60ms",width : `${progress}%`}}/>
+            <div className="bg-white opacity-50 h-2.5 rounded-b-lg" style={{transition: "width 30ms",width : `${progress}%`}}/>
         </div>
          : null}
         </div>
