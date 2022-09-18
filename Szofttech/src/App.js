@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="flex flex-col items-center h-screen w-screen">
     <Router>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-4">
       <img className="w-[1080px] h-[200px]" src={ASCII} alt=""></img>
       <Navbar/>
       </div>
