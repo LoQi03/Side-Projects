@@ -5,3 +5,11 @@
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
   }
+  @font-face {
+    font-family: Pixel;
+    src: url(./assets/Minecraft.ttf);
+  }
+  
+  -pixel {
+    font-family: Pixel;
+  }

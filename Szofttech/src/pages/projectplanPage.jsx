@@ -3,7 +3,9 @@ import React from "react";
 const ProjectPlan = ()=>{
 
     return(
-        <div>Projekt terv</div>
+        <div>
+        <div className="">Projekt terv</div>
+        </div>
     );
 
 }
