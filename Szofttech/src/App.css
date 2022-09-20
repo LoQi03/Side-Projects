@@ -10,6 +10,9 @@
     src: url(./assets/Minecraft.ttf);
   }
   
-  -pixel {
+  .pixel {
     font-family: Pixel;
+  }
+  html {
+    scroll-behavior: smooth;
   }

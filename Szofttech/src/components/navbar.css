@@ -3,6 +3,6 @@
     src: url(../assets/Minecraft.ttf);
   }
   
-  p {
+  .pixel {
     font-family: Pixel;
   }
