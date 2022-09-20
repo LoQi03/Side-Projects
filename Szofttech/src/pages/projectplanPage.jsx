@@ -5,7 +5,7 @@ const ProjectPlan = ()=>{
     return(
         <div>
         <div className="w-[1080px] my-5 px-10 fade-in-anim">
-<h1 className="bg-amber-400 rounded-lg font-bold">Projekt terv</h1>
+<h1 className="font-bold w-full border-solid border-b-2 border-black">Projekt terv</h1>
 <h2 className="mt-10 underline">Tartalom jegyzék</h2>
 <div className="flex flex-col">
 <a href="#1"><button className="p-2 text-lg hover:bg-amber-400 rounded-2xl">1.Csoport tagjai, struktúrája</button></a>
