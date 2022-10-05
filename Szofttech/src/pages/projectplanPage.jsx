@@ -6,6 +6,28 @@ const ProjectPlan = ()=>{
         <div>
         <div className="w-[1080px] my-5 px-10 fade-in-anim">
 <h1 className="font-bold w-full border-solid border-b-2 border-black">Projekt terv</h1>
+<h2>Bevezetés</h2>
+<div className="text-[17px] indent-2"><p>Bottle Battle játék. Többszemélyes telefonos party játék, ügyességi és gondolkodási feladatokkal, mint például egyensúlyozó feladatok, reakció idő feladatok. A játékmenet kör alapú, minden körben egy játékomódot játszunk.Az egyes játék módok a játékosok teljesítménye alapján pontot osztanak a játékosoknak, ami a körök között megmarad. A játékosok pontozása függ, a játékosok alapteljesítményétől, és a körök közötti önmagukhoz mért teljesítmény különbségtől(romlástól). A játék több telefonnal webböngészőn keresztül lesz játszható.</p></div>
+<div className="flex flex-col items-center">
+  <h2>Történet</h2>
+  <table class="table-auto text-[17px]">
+  <thead>
+    <tr>
+      <th>Dátum</th>
+      <th>Verzió</th>
+      <th>Leírás</th>
+      <th>Szerző</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022.09.29.</td>
+      <td>1.1</td>
+      <td>Projekt terv leírásának javítása.</td>
+      <td>Csapat</td>
+    </tr>
+  </tbody>
+</table></div>
 <h2 className="mt-10 underline">Tartalom jegyzék</h2>
 <div className="flex flex-col">
 <a href="#1"><button className="p-2 text-lg hover:bg-amber-400 rounded-2xl">1.Csoport tagjai, struktúrája</button></a>
@@ -22,7 +44,7 @@ const ProjectPlan = ()=>{
 <div className="flex flex-col items-center">
 <p className="text-[22px] font-bold" style={{marginLeft:50}}>Gyakorlat vezetője: <a href="http://gepesz.uni-miskolc.hu/staff.en.php?id=329">Árvai László</a></p>
 <p className="text-[20px] underline" style={{marginLeft:50}}>Csoport tagjainak adatai</p>
-<p><table class="table-auto tableNames">
+<p><table class="table-auto text-[17px]">
   <thead>
     <tr>
       <th>Név</th>
@@ -108,7 +130,7 @@ const ProjectPlan = ()=>{
 </ul>
 
 <h2 id="6">6.Tesztelési követelmények</h2>
-<div className="text-[17px] text-justify" style={{marginLeft:80}}>Csapatunk folyamatosan teszteli a szoftvert a készítés során. A fordulás tesztelésére CI pipelinet használunk, automata teszteket pedig nem alkalmazunk. Az első, kezdetleges verzióhoz csak alapvető szempontokat vettünk figyelembe, minthogy működjön a program, forduljon le és legyen élvezhető. A későbbiekben az esetleges hibák felderítésére és megoldására fordítunk nagyobb figyelmet, majd megpróbáljuk minél szórakoztatóbbá és esztétikusabbá tenni az alkalmazást.</div>
+<div className="text-[17px] text-justify" style={{marginLeft:80}}>Csapatunk folyamatosan teszteli a szoftvert a készítés során. A fordulás tesztelésére CI pipelinet használunk, automata teszteket is alkalmazunk. Az első, kezdetleges verzióhoz csak alapvető szempontokat vettünk figyelembe, minthogy működjön a program, forduljon le és legyen élvezhető. A későbbiekben az esetleges hibák felderítésére és megoldására fordítunk nagyobb figyelmet, majd megpróbáljuk minél szórakoztatóbbá és esztétikusabbá tenni az alkalmazást.</div>
 
 
 <h2 id="7">7.Bemutatás (demó) és szállítás módja, ideje</h2>
