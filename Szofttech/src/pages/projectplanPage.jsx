@@ -10,7 +10,7 @@ const ProjectPlan = ()=>{
 <div className="text-[17px] indent-2"><p>Bottle Battle játék. Többszemélyes telefonos party játék, ügyességi és gondolkodási feladatokkal, mint például egyensúlyozó feladatok, reakció idő feladatok. A játékmenet kör alapú, minden körben egy játékomódot játszunk.Az egyes játék módok a játékosok teljesítménye alapján pontot osztanak a játékosoknak, ami a körök között megmarad. A játékosok pontozása függ, a játékosok alapteljesítményétől, és a körök közötti önmagukhoz mért teljesítmény különbségtől(romlástól). A játék több telefonnal webböngészőn keresztül lesz játszható.</p></div>
 <div className="flex flex-col items-center">
   <h2>Történet</h2>
-  <table class="table-auto text-[17px]">
+  <table class="text-[17px]">
   <thead>
     <tr>
       <th>Dátum</th>
@@ -141,15 +141,18 @@ const ProjectPlan = ()=>{
 </ul>
 <h2 id="8">8.Információforrások</h2>
 <ul className="list-disc" style={{marginLeft:80}}>
-<li>https://tailwindcss.com/</li>
-<li>https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor</li>
-<li>https://stackoverflow.com/</li>
-<li>https://www.quora.com/</li>
-<li>https://users.iit.uni-miskolc.hu/~mileff/</li>
-<li>https://www.geeksforgeeks.org</li>
+<li><a href="https://tailwindcss.com/">https://tailwindcss.com/</a></li>
+<li><a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"> https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor</a></li>
+<li><a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+<li><a href="https://www.quora.com/">https://www.quora.com/</a></li>
+<li><a href="https://users.iit.uni-miskolc.hu/~mileff/">https://users.iit.uni-miskolc.hu/~mileff/</a></li>
+<li><a href="https://www.geeksforgeeks.org">https://www.geeksforgeeks.org</a></li>
 </ul>
 
-
+<h2>Dokumentumok</h2>
+<div>
+  <a href="https://docs.google.com/document/d/1p3JEtjmQJ4RweKpJvmZklVrCVR1wByLC/edit?usp=sharing&ouid=106424153964571442967&rtpof=true&sd=true" className="hover:bg-amber-400 rounded-2xl">Munkanapló</a>
+</div>
 </div>
         </div>
     );

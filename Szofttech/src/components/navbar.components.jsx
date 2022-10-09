@@ -10,7 +10,7 @@ const Navbar = ()=>
                     <Link className="pixel hover:text-white text-lg text-[24px]" to="/"><p className="font-semibold">Projekt terv</p></Link>
                 </li>
                 <li className="">
-                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/errorpage"><p className="font-semibold">Feladat 2</p></Link>
+                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/f2"><p className="font-semibold">Feladat 2</p></Link>
                 </li>
                 <li className="">
                     <Link className="pixel hover:text-white text-lg text-[24px]" to="/errorpage"><p className="font-semibold">Feladat 3</p></Link>
