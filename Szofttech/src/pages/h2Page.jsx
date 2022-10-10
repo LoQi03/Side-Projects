@@ -138,11 +138,6 @@ const F2 = () => {
                     </tr>
                 </tbody>
             </table>
-            <h3>4.2. A termék használatának előnyei</h3>
-            <div>Az alkalmazás használatához folyamatos és stabil internetkapcsolat szükséges (Wi-Fi vagy Mobil internet), valamint egy olyan eszköz amelyen elérhető egy webböngésző.
-                A egyes játékmódok GPS, giroszkóp- és gyorsulásmérő szenzort igényelnek. A játék egésze érintőképernyőre optimalizált.
-                Valamint a játék használatához társaság szükséges.
-            </div>
             <h3>4.3. Feltételezések és függőségek</h3>
             <div>Az alkalmazás használatához folyamatos és stabil internetkapcsolat szükséges (Wi-Fi vagy Mobil internet), valamint egy olyan eszköz amelyen elérhető egy webböngésző.
                 A egyes játékmódok GPS, giroszkóp- és gyorsulásmérő szenzort igényelnek. A játék egésze érintőképernyőre optimalizált.
