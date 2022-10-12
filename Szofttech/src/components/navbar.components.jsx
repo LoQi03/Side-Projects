@@ -7,7 +7,7 @@ const Navbar = ()=>
     return(
             <ul className="flex flex-row w-[1080px] justify-between bg-amber-400 items-center h-20 px-9 rounded-b-full border-solid border-black border-[6px] mt-2">
                 <li className="">
-                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/"><p className="font-semibold">Projekt terv</p></Link>
+                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/"><p className="font-semibold">Projektterv</p></Link>
                 </li>
                 <li className="">
                     <Link className="pixel hover:text-white text-lg text-[24px]" to="/f2"><p className="font-semibold">Feladat 2</p></Link>

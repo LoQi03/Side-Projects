@@ -5,10 +5,10 @@ const ProjectPlan = ()=>{
     return(
         <div>
         <div className="w-[1080px] my-5 px-10 fade-in-anim">
-<h1 className="font-bold w-full border-solid border-b-2 border-black">Projekt terv</h1>
+<h1 className="font-bold w-full border-solid border-b-2 border-black">Projektterv</h1>
 <h2>Bevezetés</h2>
 <div className="text-[17px] indent-2"><p>Bottle Battle játék. Többszemélyes telefonos party játék, ügyességi és gondolkodási feladatokkal, mint például egyensúlyozó feladatok, reakció idő feladatok. A játékmenet kör alapú, minden körben egy játékomódot játszunk.Az egyes játék módok a játékosok teljesítménye alapján pontot osztanak a játékosoknak, ami a körök között megmarad. A játékosok pontozása függ, a játékosok alapteljesítményétől, és a körök közötti önmagukhoz mért teljesítmény különbségtől(romlástól). A játék több telefonnal webböngészőn keresztül lesz játszható.</p></div>
-<div className="flex flex-col items-center">
+<div className="flex flex-col w-full">
   <h2>Történet</h2>
   <table class="text-[17px]">
   <thead>

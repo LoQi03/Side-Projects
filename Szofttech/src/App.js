@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="flex flex-col items-center h-full">
     <Router>
-      <div className="bg-white px-8 pb-4 rounded-lg shadow-xl my-2">
+      <div className="bg-white px-8 pb-4 rounded-lg shadow-2xl my-2">
       <div className="flex flex-col items-center mt-4">
       <img className="w-[1080px] h-[200px] border-solid border-black border-[6px]" src={ASCII} alt=""></img>
       <Navbar/>
