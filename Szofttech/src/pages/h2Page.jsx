@@ -106,6 +106,11 @@ const F2 = () => {
                         <td>Bejegyzi a weblapot a szolgáltatónál, tartalommal feltölti, illetve figyeli, hogy az oldal naprakész legyen.</td>
                     </tr>
                     <tr>
+                        <td>Support</td>
+                        <td>A játékosokkal foglalkozik, az üzemeltetést segíti.</td>
+                        <td>Beavatkozik, eltávolítja az obszcén vagy destruktív elemeket.</td>
+                    </tr>
+                    <tr>
                         <td>Tesztelő</td>
                         <td>Rávilágít az alkalmazás hibáira, majd ezt rögzíti, és továbbítja a fejlesztők felé.</td>
                         <td>Az alkalmazást tesztelő munkatárs.</td>
