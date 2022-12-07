@@ -22,6 +22,12 @@ const F5 = () => {
                         <td>H5 elkészítése</td>
                         <td>Csapat</td>
                     </tr>
+                    <tr>
+                        <td>2022.12.07.</td>
+                        <td>1.1</td>
+                        <td>H5 elkészítése</td>
+                        <td>Csapat</td>
+                    </tr>
                 </tbody>
             </table>
             <h2 className="mt-10 underline">Tartalomjegyzék</h2>

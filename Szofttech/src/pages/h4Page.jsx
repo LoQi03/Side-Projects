@@ -30,6 +30,12 @@ const F4 = () => {
                         <td>H4 elkészítése</td>
                         <td>Csapat</td>
                     </tr>
+                    <tr>
+                        <td>2022.11.22.</td>
+                        <td>1.1</td>
+                        <td>H4 elkészítése</td>
+                        <td>Csapat</td>
+                    </tr>
                 </tbody>
             </table>
             <h2 className="mt-10 underline">Tartalomjegyzék</h2>
