@@ -31,9 +31,9 @@ const F4 = () => {
                         <td>Csapat</td>
                     </tr>
                     <tr>
-                        <td>2022.11.22.</td>
+                        <td>2022.12.07.</td>
                         <td>1.1</td>
-                        <td>H4 elkészítése</td>
+                        <td>H4 javítása</td>
                         <td>Csapat</td>
                     </tr>
                 </tbody>

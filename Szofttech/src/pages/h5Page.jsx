@@ -25,7 +25,7 @@ const F5 = () => {
                     <tr>
                         <td>2022.12.07.</td>
                         <td>1.1</td>
-                        <td>H5 elkészítése</td>
+                        <td>H5 javítása</td>
                         <td>Csapat</td>
                     </tr>
                 </tbody>
