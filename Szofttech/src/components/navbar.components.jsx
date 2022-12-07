@@ -13,13 +13,13 @@ const Navbar = ()=>
                     <Link className="pixel hover:text-white text-lg text-[24px]" to="/f2"><p className="font-semibold">Feladat 2</p></Link>
                 </li>
                 <li className="">
-                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/errorpage"><p className="font-semibold">Feladat 3</p></Link>
+                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/f3"><p className="font-semibold">Feladat 3</p></Link>
                 </li>
                 <li className="">
-                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/errorpage"><p className="font-semibold">Feladat 4</p></Link>
+                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/f4"><p className="font-semibold">Feladat 4</p></Link>
                 </li>
                 <li className="">
-                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/errorpage"><p className="font-semibold">Feladat 5</p></Link>
+                    <Link className="pixel hover:text-white text-lg text-[24px]" to="/f5"><p className="font-semibold">Feladat 5</p></Link>
                 </li>
             </ul>
     );

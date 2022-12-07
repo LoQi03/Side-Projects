@@ -144,7 +144,7 @@ const F2 = () => {
                     </tr>
                     <tr>
                         <td>Előfizető felhasználó</td>
-                        <td>Olyan játékos aki nem használhatja a regisztrációhoz kötött funkciókat.</td>
+                        <td>Az alkalmazás minden funkciójához hozzáfér, reklámmentesen.</td>
                         <td>Egy játékos, aki használni szeretné az alkalmazást</td>
                     </tr>
                     <tr>
